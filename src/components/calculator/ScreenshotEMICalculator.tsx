@@ -4,10 +4,10 @@ import React, { useState, useMemo } from "react";
 import {
   Home,
   User,
-  Car,
-  Briefcase,
-  Calculator as CalcIcon,
-} from "lucide-react";
+  Buy,
+  Work,
+  Chart as CalcIcon,
+} from "@/components/ui/Iconly";
 import { calculateEMI, formatINR } from "@/lib/emi";
 
 export default function ScreenshotEMICalculator() {
@@ -50,17 +50,17 @@ export default function ScreenshotEMICalculator() {
         <div className="lg:col-span-4 bg-[#0B3766] p-8 sm:p-10 text-white flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-3.5 mb-3">
-              <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center">
-                <CalcIcon className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                <CalcIcon set="bulk" primaryColor="#ffffff" size={26} />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight">EMI Calculator</h3>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight font-heading">EMI Calculator</h3>
             </div>
 
-            <p className="text-sm font-semibold text-emerald-300 mb-4">
+            <p className="text-base font-bold text-emerald-300 mb-4">
               Plan better. Borrow smarter.
             </p>
 
-            <p className="text-xs text-slate-200 leading-relaxed">
+            <p className="text-sm text-slate-200 leading-relaxed font-normal">
               Use our easy-to-use EMI calculator to estimate your monthly payments based on current market interest rates. Get accurate results and plan your finances with confidence.
             </p>
           </div>
@@ -70,52 +70,52 @@ export default function ScreenshotEMICalculator() {
         <div className="lg:col-span-8 bg-white p-6 sm:p-8 flex flex-col justify-between">
           <div>
             {/* Tabs matching screenshot */}
-            <div className="flex flex-wrap items-center border-b border-slate-200 mb-6 gap-2 sm:gap-6">
+            <div className="flex flex-wrap items-center border-b border-slate-200 mb-6 gap-3 sm:gap-6">
               <button
                 onClick={() => handleTabChange("home")}
-                className={`flex items-center gap-2 pb-3 text-xs sm:text-sm font-bold transition-all relative ${
+                className={`flex items-center gap-2 pb-3 text-sm sm:text-[15px] font-bold transition-all relative ${
                   activeTab === "home"
                     ? "text-[#0B3766] border-b-2 border-[#0B3766]"
                     : "text-slate-500 hover:text-slate-800"
                 }`}
               >
-                <Home className="w-4 h-4 text-[#0B3766]" />
+                <Home set="bulk" primaryColor="#0B3766" size={18} />
                 <span>Home Loan</span>
               </button>
 
               <button
                 onClick={() => handleTabChange("personal")}
-                className={`flex items-center gap-2 pb-3 text-xs sm:text-sm font-bold transition-all relative ${
+                className={`flex items-center gap-2 pb-3 text-sm sm:text-[15px] font-bold transition-all relative ${
                   activeTab === "personal"
                     ? "text-[#0B3766] border-b-2 border-[#0B3766]"
                     : "text-slate-500 hover:text-slate-800"
                 }`}
               >
-                <User className="w-4 h-4 text-[#0B3766]" />
+                <User set="bulk" primaryColor="#0B3766" size={18} />
                 <span>Personal Loan</span>
               </button>
 
               <button
                 onClick={() => handleTabChange("vehicle")}
-                className={`flex items-center gap-2 pb-3 text-xs sm:text-sm font-bold transition-all relative ${
+                className={`flex items-center gap-2 pb-3 text-sm sm:text-[15px] font-bold transition-all relative ${
                   activeTab === "vehicle"
                     ? "text-[#0B3766] border-b-2 border-[#0B3766]"
                     : "text-slate-500 hover:text-slate-800"
                 }`}
               >
-                <Car className="w-4 h-4 text-[#0B3766]" />
+                <Buy set="bulk" primaryColor="#0B3766" size={18} />
                 <span>Vehicle Loan</span>
               </button>
 
               <button
                 onClick={() => handleTabChange("business")}
-                className={`flex items-center gap-2 pb-3 text-xs sm:text-sm font-bold transition-all relative ${
+                className={`flex items-center gap-2 pb-3 text-sm sm:text-[15px] font-bold transition-all relative ${
                   activeTab === "business"
                     ? "text-[#0B3766] border-b-2 border-[#0B3766]"
                     : "text-slate-500 hover:text-slate-800"
                 }`}
               >
-                <Briefcase className="w-4 h-4 text-[#0B3766]" />
+                <Work set="bulk" primaryColor="#0B3766" size={18} />
                 <span>Business Loan</span>
               </button>
             </div>
@@ -123,7 +123,7 @@ export default function ScreenshotEMICalculator() {
             {/* Inputs 3-columns grid matching screenshot */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
               <div>
-                <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                <label className="block text-[13px] font-bold text-slate-700 mb-1.5">
                   Loan Amount (₹)
                 </label>
                 <div className="relative flex items-center">
@@ -134,25 +134,25 @@ export default function ScreenshotEMICalculator() {
                       const cleanNum = Number(e.target.value.replace(/[^0-9]/g, ""));
                       if (!isNaN(cleanNum)) setLoanAmount(cleanNum);
                     }}
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#0B3766]"
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B3666]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                <label className="block text-[13px] font-bold text-slate-700 mb-1.5">
                   Loan Tenure (Years)
                 </label>
                 <input
                   type="number"
                   value={tenureYears}
                   onChange={(e) => setTenureYears(Number(e.target.value))}
-                  className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#0B3766]"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B3666]"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                <label className="block text-[13px] font-bold text-slate-700 mb-1.5">
                   Interest Rate (% p.a.)
                 </label>
                 <input
@@ -160,7 +160,7 @@ export default function ScreenshotEMICalculator() {
                   step="0.1"
                   value={interestRate}
                   onChange={(e) => setInterestRate(Number(e.target.value))}
-                  className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#0B3766]"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0B3666]"
                 />
               </div>
             </div>
@@ -169,44 +169,45 @@ export default function ScreenshotEMICalculator() {
             <div className="mb-6">
               <button
                 type="button"
-                className="w-full py-2.5 bg-[#0B3766] hover:bg-[#06284B] text-white text-xs font-bold rounded-lg shadow-sm transition"
+                className="w-full py-3 bg-[#0B3666] hover:bg-[#06284B] text-white text-[15px] font-bold rounded-lg shadow-sm transition"
               >
                 Calculate EMI
               </button>
             </div>
 
-            {/* 3 Result Columns matching screenshot */}
-            <div className="grid grid-cols-3 gap-2 py-4 border-t border-slate-100 text-center">
-              <div>
-                <span className="text-[11px] text-slate-500 font-medium block">
+            {/* 3 Result Columns matching recommendation */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-2 py-4 border-t border-slate-100 text-center">
+              <div className="bg-slate-50/70 sm:bg-transparent p-3 sm:p-0 rounded-xl">
+                <span className="text-[13px] text-slate-500 font-semibold block">
                   Monthly EMI
                 </span>
-                <span className="text-base sm:text-xl font-extrabold text-[#0B3766] mt-0.5 block">
+                <span className="font-numbers text-2xl sm:text-[30px] font-extrabold text-[#0B3666] mt-1 block tracking-tight">
                   {formatINR(results.monthlyEmi)}
                 </span>
               </div>
 
-              <div>
-                <span className="text-[11px] text-slate-500 font-medium block">
+              <div className="bg-slate-50/70 sm:bg-transparent p-3 sm:p-0 rounded-xl">
+                <span className="text-[13px] text-slate-500 font-semibold block">
                   Total Interest
                 </span>
-                <span className="text-base sm:text-xl font-extrabold text-slate-800 mt-0.5 block">
+                <span className="font-numbers text-2xl sm:text-[30px] font-extrabold text-slate-800 mt-1 block tracking-tight">
                   {formatINR(results.totalInterest)}
                 </span>
               </div>
 
-              <div>
-                <span className="text-[11px] text-slate-500 font-medium block">
+              <div className="bg-slate-50/70 sm:bg-transparent p-3 sm:p-0 rounded-xl">
+                <span className="text-[13px] text-slate-500 font-semibold block">
                   Total Amount Payable
                 </span>
-                <span className="text-base sm:text-xl font-extrabold text-slate-800 mt-0.5 block">
+                <span className="font-numbers text-2xl sm:text-[30px] font-extrabold text-slate-800 mt-1 block tracking-tight">
                   {formatINR(results.totalPayment)}
                 </span>
               </div>
             </div>
+
           </div>
 
-          <p className="text-[10px] text-slate-400 text-center mt-3 pt-2 border-t border-slate-100">
+          <p className="text-xs text-slate-400 text-center mt-3 pt-2 border-t border-slate-100 font-normal">
             * Interest rates are indicative and based on current market trends. Actual rates may vary.
           </p>
         </div>

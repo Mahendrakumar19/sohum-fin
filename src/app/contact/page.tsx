@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import ContactForm from "@/components/forms/ContactForm";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Location, Call, Message, TimeCircle, Chat } from "@/components/ui/Iconly";
 import { COMPANY_CONTACT } from "@/content/siteData";
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ export default function ContactPage({
               <div className="space-y-6 text-sm">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-emerald-400" />
+                    <Location set="bulk" primaryColor="#34d399" size={20} />
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block font-semibold uppercase tracking-wider">
@@ -55,7 +55,7 @@ export default function ContactPage({
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-emerald-400" />
+                    <Call set="bulk" primaryColor="#34d399" size={20} />
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block font-semibold uppercase tracking-wider">
@@ -72,7 +72,7 @@ export default function ContactPage({
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-emerald-400" />
+                    <Message set="bulk" primaryColor="#34d399" size={20} />
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block font-semibold uppercase tracking-wider">
@@ -89,7 +89,7 @@ export default function ContactPage({
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5 text-emerald-400" />
+                    <TimeCircle set="bulk" primaryColor="#34d399" size={20} />
                   </div>
                   <div>
                     <span className="text-xs text-slate-400 block font-semibold uppercase tracking-wider">
@@ -110,7 +110,7 @@ export default function ContactPage({
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 rounded-xl transition text-sm shadow"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <Chat set="bold" primaryColor="white" size={18} />
                   <span>Chat with Us on WhatsApp</span>
                 </a>
               </div>

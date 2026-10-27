@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-manrope",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-heading",
+  variable: "--font-inter",
   display: "swap",
-  weight: ["600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
 });
+
 
 export const viewport = {
   width: "device-width",
@@ -51,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${outfit.variable} h-full scroll-smooth antialiased`}
+      className={`${manrope.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-[#192b45]">
         <SiteHeader />
@@ -61,3 +62,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

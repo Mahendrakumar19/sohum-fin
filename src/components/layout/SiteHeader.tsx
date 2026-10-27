@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MapPin, Menu, X, ChevronDown } from "lucide-react";
+import { Location, ChevronDown } from "@/components/ui/Iconly";
 import { SohumBrandMark } from "@/components/ui/SohumBrandMark";
+
 
 export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,10 +21,10 @@ export default function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation with refined Google Font styling */}
-          <nav className="hidden lg:flex items-center gap-7 text-[14px] font-semibold text-[#192b45]">
+          <nav className="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-[#192b45]">
             <Link
               href="/"
-              className={`pb-1.5 transition-colors ${
+              className={`pb-1 transition-colors ${
                 pathname === "/"
                   ? "text-[#0B3666] border-b-2 border-[#008272] font-bold"
                   : "hover:text-[#008272]"
@@ -35,19 +36,21 @@ export default function SiteHeader() {
             <div className="relative group py-2">
               <Link
                 href="/investments"
-                className="flex items-center gap-1 hover:text-[#008272] transition-colors"
+                className="flex items-center gap-1.5 hover:text-[#008272] transition-colors"
               >
                 <span>Investments</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#576F84] group-hover:rotate-180 transition-transform" />
+                <span className="text-[#576F84] group-hover:rotate-180 transition-transform inline-flex">
+                  <ChevronDown set="light" primaryColor="currentColor" size={14} />
+                </span>
               </Link>
-              <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white border border-[#DCE8F0] rounded-xl shadow-lg p-2 z-50">
-                <Link href="/investments#mutual-funds" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+              <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-white border border-[#DCE8F0] rounded-xl shadow-lg p-2 z-50">
+                <Link href="/investments#mutual-funds" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Mutual Funds
                 </Link>
-                <Link href="/investments#stocks" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+                <Link href="/investments#stocks" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Stocks & Equities
                 </Link>
-                <Link href="/investments#insurance" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+                <Link href="/investments#insurance" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Insurance Plans
                 </Link>
               </div>
@@ -56,31 +59,33 @@ export default function SiteHeader() {
             <div className="relative group py-2">
               <Link
                 href="/loans"
-                className="flex items-center gap-1 hover:text-[#008272] transition-colors"
+                className="flex items-center gap-1.5 hover:text-[#008272] transition-colors"
               >
                 <span>Loans</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#576F84] group-hover:rotate-180 transition-transform" />
+                <span className="text-[#576F84] group-hover:rotate-180 transition-transform inline-flex">
+                  <ChevronDown set="light" primaryColor="currentColor" size={14} />
+                </span>
               </Link>
-              <div className="absolute top-full left-0 hidden group-hover:block w-52 bg-white border border-[#DCE8F0] rounded-xl shadow-lg p-2 z-50">
-                <Link href="/loans#home-loan" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+              <div className="absolute top-full left-0 hidden group-hover:block w-56 bg-white border border-[#DCE8F0] rounded-xl shadow-lg p-2 z-50">
+                <Link href="/loans#home-loan" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Home Loan
                 </Link>
-                <Link href="/loans#lap" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+                <Link href="/loans#lap" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Loan Against Property (LAP)
                 </Link>
-                <Link href="/loans#vehicle-loan" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+                <Link href="/loans#vehicle-loan" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Vehicle Loan
                 </Link>
-                <Link href="/loans#business-loan" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+                <Link href="/loans#business-loan" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Business Loan
                 </Link>
-                <Link href="/loans#project-financing" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+                <Link href="/loans#project-financing" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Project Financing
                 </Link>
-                <Link href="/loans#personal-loan" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+                <Link href="/loans#personal-loan" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Personal Loan
                 </Link>
-                <Link href="/loans#education-loan" className="block px-3 py-2 text-xs font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
+                <Link href="/loans#education-loan" className="block px-3 py-2 text-sm font-medium rounded-lg hover:bg-slate-50 hover:text-[#008272]">
                   Education Loan
                 </Link>
               </div>
@@ -115,14 +120,16 @@ export default function SiteHeader() {
           </nav>
 
           {/* Right Header Area: Location badge + Get Started button as in reference */}
-          <div className="hidden md:flex items-center gap-5">
-            <div className="flex items-center gap-2 text-left">
-              <MapPin className="w-4 h-4 text-[#0B3666] shrink-0" />
+          <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-center gap-2.5 text-left">
+              <div className="w-8 h-8 rounded-full bg-[#E8F3FA] flex items-center justify-center shrink-0">
+                <Location set="bold" primaryColor="#0B3666" size={18} />
+              </div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold text-[#0B3666] leading-tight">
+                <span className="text-sm font-bold text-[#0B3666] leading-tight">
                   Noida, Uttar Pradesh
                 </span>
-                <span className="text-[10px] text-[#576F84] leading-tight">
+                <span className="text-xs text-[#576F84] leading-tight mt-0.5 font-medium">
                   A Fintech Company
                 </span>
               </div>
@@ -130,7 +137,7 @@ export default function SiteHeader() {
 
             <Link
               href="/contact"
-              className="bg-[#0B3666] hover:bg-[#052342] text-white text-xs sm:text-sm font-bold px-6 py-2.5 rounded-full shadow-xs hover:shadow transition"
+              className="bg-[#0B3666] hover:bg-[#052342] text-white text-[15px] font-bold px-7 py-2.5 rounded-full shadow-xs hover:shadow transition"
             >
               Get Started
             </Link>
@@ -142,8 +149,17 @@ export default function SiteHeader() {
             className="lg:hidden p-2 rounded-lg text-slate-700 hover:text-[#0B3666] hover:bg-slate-100 transition"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <svg className="w-6 h-6 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6 stroke-current stroke-2 fill-none" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
+
         </div>
       </div>
 
@@ -196,7 +212,7 @@ export default function SiteHeader() {
 
             <div className="pt-3 border-t border-[#DCE8F0] mt-2 flex flex-col gap-3">
               <div className="flex items-center gap-2 px-3 text-xs text-[#576F84]">
-                <MapPin className="w-3.5 h-3.5 text-[#0B3666]" />
+                <Location set="bold" primaryColor="#0B3666" size={16} />
                 <span>Noida, Uttar Pradesh (A Fintech Company)</span>
               </div>
               <Link

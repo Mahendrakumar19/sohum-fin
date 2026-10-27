@@ -1,13 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import {
-  IconHeroWealth,
-  IconHeroFinancialSecurity,
-  IconHeroTrustedPartnerships,
-  IconHeroCustomerFirst,
-} from "@/components/ui/OriginalIcons";
+import { Graph, ShieldDone, TwoUsers, Heart, ArrowRight } from "@/components/ui/Iconly";
+
 
 export default function HeroSection() {
   return (
@@ -47,59 +42,60 @@ export default function HeroSection() {
               Invest &nbsp;|&nbsp; Grow &nbsp;|&nbsp; Achieve
             </div>
 
-            <p className="text-sm sm:text-base text-[#192b45] font-medium leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-[#192b45] font-normal leading-relaxed max-w-xl">
               Sohum Fintech Solutions LLP is a Noida based fintech company helping individuals and businesses build a secure financial future through smart investments and easy access to loans.
             </p>
 
-            {/* 4 Feature Badges with exact clean teal icons in rounded glassmorphic boxes */}
-            <div className="grid grid-cols-4 gap-3 max-w-lg pt-2 pb-1">
-              <div className="flex flex-col items-center text-center p-2.5 rounded-xl bg-white/90 backdrop-blur-md border border-[#DCE8F0] shadow-2xs hover:shadow-xs transition">
-                <div className="w-10 h-10 rounded-lg bg-[#E6F5F2] flex items-center justify-center mb-1.5">
-                  <IconHeroWealth className="w-6 h-6" />
+            {/* 4 Feature Badges with clean Iconly icons in rounded glassmorphic boxes */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 max-w-xl pt-2 pb-1">
+              <div className="flex flex-col items-center text-center p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#DCE8F0] shadow-2xs hover:shadow-xs transition">
+                <div className="w-11 h-11 rounded-xl bg-[#E6F5F2] flex items-center justify-center mb-2">
+                  <Graph set="bulk" primaryColor="#008272" size={24} />
                 </div>
-                <span className="text-[11px] font-semibold text-[#192b45] leading-tight">
+                <span className="text-[13px] font-bold text-[#192b45] leading-tight">
                   Wealth<br />Creation
                 </span>
               </div>
 
-              <div className="flex flex-col items-center text-center p-2.5 rounded-xl bg-white/90 backdrop-blur-md border border-[#DCE8F0] shadow-2xs hover:shadow-xs transition">
-                <div className="w-10 h-10 rounded-lg bg-[#E6F5F2] flex items-center justify-center mb-1.5">
-                  <IconHeroFinancialSecurity className="w-6 h-6" />
+              <div className="flex flex-col items-center text-center p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#DCE8F0] shadow-2xs hover:shadow-xs transition">
+                <div className="w-11 h-11 rounded-xl bg-[#E6F5F2] flex items-center justify-center mb-2">
+                  <ShieldDone set="bulk" primaryColor="#008272" size={24} />
                 </div>
-                <span className="text-[11px] font-semibold text-[#192b45] leading-tight">
+                <span className="text-[13px] font-bold text-[#192b45] leading-tight">
                   Financial<br />Security
                 </span>
               </div>
 
-              <div className="flex flex-col items-center text-center p-2.5 rounded-xl bg-white/90 backdrop-blur-md border border-[#DCE8F0] shadow-2xs hover:shadow-xs transition">
-                <div className="w-10 h-10 rounded-lg bg-[#E6F5F2] flex items-center justify-center mb-1.5">
-                  <IconHeroTrustedPartnerships className="w-6 h-6" />
+              <div className="flex flex-col items-center text-center p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#DCE8F0] shadow-2xs hover:shadow-xs transition">
+                <div className="w-11 h-11 rounded-xl bg-[#E6F5F2] flex items-center justify-center mb-2">
+                  <TwoUsers set="bulk" primaryColor="#008272" size={24} />
                 </div>
-                <span className="text-[11px] font-semibold text-[#192b45] leading-tight">
+                <span className="text-[13px] font-bold text-[#192b45] leading-tight">
                   Trusted<br />Partnerships
                 </span>
               </div>
 
-              <div className="flex flex-col items-center text-center p-2.5 rounded-xl bg-white/90 backdrop-blur-md border border-[#DCE8F0] shadow-2xs hover:shadow-xs transition">
-                <div className="w-10 h-10 rounded-lg bg-[#E6F5F2] flex items-center justify-center mb-1.5">
-                  <IconHeroCustomerFirst className="w-6 h-6" />
+              <div className="flex flex-col items-center text-center p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#DCE8F0] shadow-2xs hover:shadow-xs transition">
+                <div className="w-11 h-11 rounded-xl bg-[#E6F5F2] flex items-center justify-center mb-2">
+                  <Heart set="bulk" primaryColor="#008272" size={24} />
                 </div>
-                <span className="text-[11px] font-semibold text-[#192b45] leading-tight">
+                <span className="text-[13px] font-bold text-[#192b45] leading-tight">
                   Customer<br />First
                 </span>
               </div>
             </div>
 
-            {/* CTA Button matching screenshot */}
+            {/* CTA Button matching recommendation */}
             <div className="pt-2">
               <Link
                 href="/loans"
-                className="inline-flex items-center gap-2.5 bg-[#0B3666] hover:bg-[#052342] text-white font-bold px-7 py-3 rounded-full shadow-md hover:shadow-lg transition active:scale-95 text-sm"
+                className="inline-flex items-center gap-2.5 bg-[#0B3666] hover:bg-[#052342] text-white font-bold px-8 py-3.5 rounded-full shadow-md hover:shadow-lg transition active:scale-95 text-[15px]"
               >
                 <span>Explore Our Services</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight set="light" primaryColor="#ffffff" size={16} />
               </Link>
             </div>
+
           </div>
 
           {/* Right Column (5 cols): Floating script card over the extended coin background */}

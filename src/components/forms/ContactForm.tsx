@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2, AlertCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Send, TickSquare, Danger } from "@/components/ui/Iconly";
 import { COMPANY_CONTACT } from "@/content/siteData";
+
 
 interface ContactFormProps {
   preselectedService?: string;
@@ -73,8 +74,8 @@ export default function ContactForm({
     <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
       {status === "success" ? (
         <div className="py-10 text-center space-y-4 animate-in fade-in zoom-in-95 duration-300">
-          <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-[#168653]">
-            <CheckCircle2 className="w-9 h-9" />
+          <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-[#008272]">
+            <TickSquare set="bulk" primaryColor="#008272" size={36} />
           </div>
           <h3 className="text-2xl font-bold text-[#0B3766]">Enquiry Received!</h3>
           <p className="text-slate-600 max-w-md mx-auto text-sm leading-relaxed">
@@ -107,10 +108,11 @@ export default function ContactForm({
 
           {status === "error" && (
             <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-xs flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 shrink-0" />
+              <Danger set="bulk" primaryColor="#ef4444" size={18} />
               <span>{errorMessage}</span>
             </div>
           )}
+
 
           <div>
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
@@ -236,17 +238,18 @@ export default function ContactForm({
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full flex items-center justify-center gap-2 bg-[#168653] hover:bg-[#126b42] text-white font-bold py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition active:scale-98 text-sm"
+            className="w-full flex items-center justify-center gap-2 bg-[#008272] hover:bg-[#006e60] text-white font-bold py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition active:scale-98 text-sm"
           >
             {status === "submitting" ? (
               <span>Sending Enquiry...</span>
             ) : (
               <>
                 <span>Submit Loan / Investment Request</span>
-                <Send className="w-4 h-4" />
+                <Send set="light" primaryColor="#ffffff" size={16} />
               </>
             )}
           </button>
+
         </form>
       )}
     </div>

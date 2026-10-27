@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LoansSection from "@/components/sections/LoansSection";
 import EMICalculatorComponent from "@/components/calculator/EMICalculatorComponent";
 import ContactForm from "@/components/forms/ContactForm";
-import { CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
+import { TickSquare } from "@/components/ui/Iconly";
 
 export const metadata: Metadata = {
   title: "Loan Options | Sohum Fintech Solutions LLP",
@@ -15,7 +15,7 @@ export default function LoansPage() {
     <div className="py-12 bg-slate-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="bg-gradient-to-r from-[#06284B] to-[#0B3766] rounded-3xl p-8 sm:p-12 text-white shadow-xl">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#2ecc71]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#008272]">
             Comprehensive Credit Portfolio
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mt-2 mb-4">
@@ -27,17 +27,18 @@ export default function LoansPage() {
 
           <div className="flex flex-wrap gap-4 mt-6 text-xs text-slate-200">
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full">
-              <CheckCircle2 className="w-4 h-4 text-[#2ecc71]" /> Zero Consultation Fees
+              <TickSquare set="bulk" primaryColor="#008272" size={16} /> Zero Consultation Fees
             </span>
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full">
-              <CheckCircle2 className="w-4 h-4 text-[#2ecc71]" /> Multi-Bank Rate Comparisons
+              <TickSquare set="bulk" primaryColor="#008272" size={16} /> Multi-Bank Rate Comparisons
             </span>
             <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full">
-              <CheckCircle2 className="w-4 h-4 text-[#2ecc71]" /> Complete Paperwork Guidance
+              <TickSquare set="bulk" primaryColor="#008272" size={16} /> Complete Paperwork Guidance
             </span>
           </div>
         </div>
       </div>
+
 
       <LoansSection />
 

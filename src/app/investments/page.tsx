@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import InvestmentsSection from "@/components/sections/InvestmentsSection";
 import ContactForm from "@/components/forms/ContactForm";
-import { TrendingUp, ShieldAlert, CheckCircle } from "lucide-react";
+import { ShieldDone } from "@/components/ui/Iconly";
 
 export const metadata: Metadata = {
   title: "Investment & Wealth Guidance | Sohum Fintech Solutions LLP",
@@ -25,7 +25,7 @@ export default function InvestmentsPage() {
           </p>
 
           <div className="mt-6 p-4 rounded-xl bg-white/10 border border-white/15 max-w-2xl text-xs text-slate-200 flex items-start gap-3">
-            <ShieldAlert className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span className="shrink-0 mt-0.5"><ShieldDone set="bulk" primaryColor="#2ecc71" size={18} /></span>
             <span>
               <strong>Regulatory Advisory Note:</strong> Investments are subject to market fluctuations. Scheme selection should be aligned with your personal risk tolerance and time horizon.
             </span>

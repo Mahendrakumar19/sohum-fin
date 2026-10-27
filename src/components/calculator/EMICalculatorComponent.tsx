@@ -10,14 +10,11 @@ import {
   LoanTypeConfig,
 } from "@/lib/emi";
 import {
-  Calculator,
-  Info,
+  Chart,
+  InfoCircle,
   ArrowRight,
-  RotateCcw,
-  Sparkles,
-  PieChart as PieIcon,
-  HelpCircle,
-} from "lucide-react";
+  TimeCircle,
+} from "@/components/ui/Iconly";
 
 interface EMICalculatorProps {
   initialLoanTypeId?: string;
@@ -69,7 +66,7 @@ export default function EMICalculatorComponent({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#168653]/30 border border-[#168653] flex items-center justify-center text-white">
-              <Calculator className="w-5 h-5 text-[#2ecc71]" />
+              <Chart set="bulk" primaryColor="#2ecc71" size={22} />
             </div>
             <div>
               <h2 className="text-xl font-bold tracking-tight">Interactive EMI Calculator</h2>
@@ -82,7 +79,7 @@ export default function EMICalculatorComponent({
             onClick={handleReset}
             className="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200 transition"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <TimeCircle set="light" primaryColor="currentColor" size={14} />
             <span>Reset Defaults</span>
           </button>
         </div>
@@ -226,9 +223,9 @@ export default function EMICalculatorComponent({
             </div>
           </div>
 
-          <div className="bg-[#EFF7FC] p-3.5 rounded-xl border border-[#D8E5EE] text-xs text-[#18334D] flex items-start gap-2.5">
-            <Info className="w-4 h-4 text-[#0B3766] shrink-0 mt-0.5" />
-            <p>
+          <div className="bg-[#EFF7FC] p-4 rounded-xl border border-[#D8E5EE] text-[13px] text-[#18334D] flex items-start gap-2.5">
+            <span className="shrink-0 mt-0.5"><InfoCircle set="bulk" primaryColor="#0B3766" size={18} /></span>
+            <p className="leading-relaxed">
               Selected: <strong className="text-[#0B3766]">{selectedConfig.name}</strong>. {selectedConfig.shortDesc}
             </p>
           </div>
@@ -237,15 +234,15 @@ export default function EMICalculatorComponent({
         {/* Results & Breakdown Column */}
         <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">
+            <span className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
               Estimated Monthly Outflow
             </span>
-            <div className="bg-gradient-to-br from-[#EFF7FC] to-white p-5 rounded-2xl border border-[#D8E5EE] shadow-sm mb-6">
-              <span className="text-xs font-semibold text-[#0B3766]">Monthly EMI</span>
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#0B3766] mt-1 tracking-tight">
+            <div className="bg-gradient-to-br from-[#EFF7FC] to-white p-5 sm:p-6 rounded-2xl border border-[#D8E5EE] shadow-sm mb-6">
+              <span className="text-xs sm:text-sm font-bold text-[#0B3766]">Monthly EMI</span>
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#0B3766] mt-1 tracking-tight font-numbers">
                 {formatINR(emiResult.monthlyEmi)}
               </div>
-              <span className="text-[11px] text-slate-500 mt-0.5 block">
+              <span className="text-xs text-slate-500 mt-1 block">
                 for {tenureYears * 12} monthly instalments
               </span>
             </div>
@@ -307,7 +304,7 @@ export default function EMICalculatorComponent({
                 className="w-full inline-flex items-center justify-center gap-2 bg-[#168653] hover:bg-[#126b42] text-white font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 text-sm active:scale-98"
               >
                 <span>Enquire For This Loan</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight set="light" primaryColor="white" size={16} />
               </Link>
             )}
 

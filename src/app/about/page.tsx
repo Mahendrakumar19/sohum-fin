@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { COMPANY_CONTACT, TRUST_DIFFERENTIATORS } from "@/content/siteData";
-import { ShieldCheck, Target, Users, Landmark, Award } from "lucide-react";
+import { Discovery, ShieldDone, Work } from "@/components/ui/Iconly";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-[#EFF7FC] p-8 rounded-3xl border border-[#D8E5EE]">
             <div className="w-12 h-12 rounded-2xl bg-white text-[#0B3766] flex items-center justify-center mb-5 shadow-xs">
-              <Target className="w-6 h-6 text-[#168653]" />
+              <Discovery set="bulk" primaryColor="#168653" size={26} />
             </div>
             <h3 className="text-xl font-bold text-[#0B3766] mb-3">Our Mission</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
@@ -41,7 +41,7 @@ export default function AboutPage() {
 
           <div className="bg-[#EFF7FC] p-8 rounded-3xl border border-[#D8E5EE]">
             <div className="w-12 h-12 rounded-2xl bg-white text-[#0B3766] flex items-center justify-center mb-5 shadow-xs">
-              <ShieldCheck className="w-6 h-6 text-[#168653]" />
+              <ShieldDone set="bulk" primaryColor="#168653" size={26} />
             </div>
             <h3 className="text-xl font-bold text-[#0B3766] mb-3">Integrity First</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
@@ -51,7 +51,7 @@ export default function AboutPage() {
 
           <div className="bg-[#EFF7FC] p-8 rounded-3xl border border-[#D8E5EE]">
             <div className="w-12 h-12 rounded-2xl bg-white text-[#0B3766] flex items-center justify-center mb-5 shadow-xs">
-              <Landmark className="w-6 h-6 text-[#168653]" />
+              <Work set="bulk" primaryColor="#168653" size={26} />
             </div>
             <h3 className="text-xl font-bold text-[#0B3766] mb-3">Robust Partnerships</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
