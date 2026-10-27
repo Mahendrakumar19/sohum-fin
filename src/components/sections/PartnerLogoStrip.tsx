@@ -1,6 +1,66 @@
 import React from "react";
+import Image from "next/image";
 
 export default function PartnerLogoStrip() {
+  const partners = [
+    {
+      name: "State Bank of India",
+      src: "/banks/sbi.svg",
+      alt: "SBI Logo",
+      width: 130,
+      height: 38,
+      className: "h-7 sm:h-8 w-auto max-w-[110px]",
+    },
+    {
+      name: "HDFC Bank",
+      src: "/banks/hdfc.svg",
+      alt: "HDFC Bank Logo",
+      width: 140,
+      height: 34,
+      className: "h-6 sm:h-7 w-auto max-w-[125px]",
+    },
+    {
+      name: "ICICI Bank",
+      src: "/banks/icici.svg",
+      alt: "ICICI Bank Logo",
+      width: 140,
+      height: 36,
+      className: "h-6 sm:h-7 w-auto max-w-[120px]",
+    },
+    {
+      name: "Axis Bank",
+      src: "/banks/axis.svg",
+      alt: "Axis Bank Logo",
+      width: 140,
+      height: 36,
+      className: "h-6 sm:h-7 w-auto max-w-[120px]",
+    },
+    {
+      name: "Kotak Mahindra Bank",
+      src: "/banks/kotak.svg",
+      alt: "Kotak Bank Logo",
+      width: 130,
+      height: 38,
+      className: "h-6 sm:h-7 w-auto max-w-[110px]",
+    },
+    {
+      name: "Bajaj Finserv",
+      src: "/banks/bajaj.svg",
+      alt: "Bajaj Finserv Logo",
+      width: 140,
+      height: 38,
+      className: "h-6 sm:h-7 w-auto max-w-[125px]",
+    },
+    {
+      name: "LIC Housing Finance",
+      src: "/banks/lichfl.svg",
+      alt: "LIC HFL Logo",
+      width: 150,
+      height: 40,
+      className: "h-7 sm:h-8 w-auto max-w-[130px]",
+    },
+  ];
+
   return (
     <section className="py-14 bg-[#F8FAFC] border-b border-[#DCE8F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,67 +73,29 @@ export default function PartnerLogoStrip() {
           </p>
         </div>
 
-        {/* Clean Logo Box Row matching reference screenshot layout */}
+        {/* Clean Logo Row featuring official brand vectors */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-          {/* SBI */}
-          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
-            <div className="w-5 h-5 rounded-full bg-[#0082c6] flex items-center justify-center text-white text-[10px] font-black">
-              ●
+          {partners.map((partner, index) => (
+            <div
+              key={index}
+              className="bg-white px-4 py-2.5 rounded-lg border border-[#DCE8F0] shadow-2xs hover:shadow-xs hover:border-[#008272]/40 transition flex items-center justify-center min-h-[46px] min-w-[110px] sm:min-w-[130px]"
+            >
+              <Image
+                src={partner.src}
+                alt={partner.alt}
+                width={partner.width}
+                height={partner.height}
+                className={`${partner.className} object-contain transition-transform hover:scale-105 duration-150`}
+                priority
+              />
             </div>
-            <span className="font-extrabold text-sm text-[#002f6c] tracking-wider">SBI</span>
-          </div>
+          ))}
 
-          {/* HDFC */}
-          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
-            <div className="w-4 h-4 bg-[#004c8f] border border-red-600 flex items-center justify-center text-[8px] text-white font-bold">
-              +
-            </div>
-            <span className="font-black text-sm text-[#004c8f] tracking-tight">HDFC BANK</span>
-          </div>
-
-          {/* ICICI */}
-          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
-            <span className="text-base text-[#f37e20] font-black">i</span>
-            <span className="font-extrabold text-sm text-[#a81c20] tracking-tight">ICICI Bank</span>
-          </div>
-
-          {/* AXIS */}
-          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
-            <span className="text-base font-black text-[#97144d]">▲</span>
-            <span className="font-extrabold text-sm text-[#97144d] tracking-wider">AXIS BANK</span>
-          </div>
-
-          {/* KOTAK */}
-          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-1.5 shadow-2xs hover:shadow-xs transition">
-            <div className="w-4 h-4 rounded-full bg-red-600 flex items-center justify-center text-[9px] text-white font-bold">
-              ∞
-            </div>
-            <span className="font-black text-sm text-[#003366] tracking-tight">kotak</span>
-          </div>
-
-          {/* BAJAJ FINSERV */}
-          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
-            <div className="w-4 h-4 rounded bg-[#0072bc] flex items-center justify-center text-[10px] text-white font-black">
-              B
-            </div>
-            <span className="font-extrabold text-xs text-[#0072bc] tracking-wider">BAJAJ FINSERV</span>
-          </div>
-
-          {/* LIC HFL */}
-          <div className="bg-white px-4 py-2.5 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
-            <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center text-[9px] font-bold text-slate-900">
-              🪔
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="font-black text-xs text-[#005a9c] leading-none">LIC HFL</span>
-              <span className="text-[7px] font-semibold text-slate-500 leading-none mt-0.5">HOUSING FINANCE LTD</span>
-            </div>
-          </div>
-
-          {/* and more */}
+          {/* and more badge */}
           <span className="text-xs text-[#576F84] italic px-2 font-medium">and more...</span>
         </div>
       </div>
     </section>
   );
 }
+
