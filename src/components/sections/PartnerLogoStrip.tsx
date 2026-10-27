@@ -1,100 +1,77 @@
 import React from "react";
-import Image from "next/image";
 
 export default function PartnerLogoStrip() {
-  const bankLogos = [
-    {
-      name: "State Bank of India",
-      src: "/banks/sbi.svg",
-      alt: "SBI Logo",
-      width: 140,
-      height: 44,
-      scaleClass: "h-8 sm:h-9 w-auto",
-    },
-    {
-      name: "HDFC Bank",
-      src: "/banks/hdfc.svg",
-      alt: "HDFC Bank Logo",
-      width: 170,
-      height: 38,
-      scaleClass: "h-7 sm:h-8 w-auto",
-    },
-    {
-      name: "ICICI Bank",
-      src: "/banks/icici.svg",
-      alt: "ICICI Bank Logo",
-      width: 165,
-      height: 42,
-      scaleClass: "h-8 sm:h-9 w-auto",
-    },
-    {
-      name: "Axis Bank",
-      src: "/banks/axis.svg",
-      alt: "Axis Bank Logo",
-      width: 165,
-      height: 42,
-      scaleClass: "h-8 sm:h-9 w-auto",
-    },
-    {
-      name: "Kotak Mahindra Bank",
-      src: "/banks/kotak.svg",
-      alt: "Kotak Mahindra Bank Logo",
-      width: 150,
-      height: 44,
-      scaleClass: "h-8 sm:h-9 w-auto",
-    },
-    {
-      name: "Bajaj Finserv",
-      src: "/banks/bajaj.svg",
-      alt: "Bajaj Finserv Logo",
-      width: 160,
-      height: 44,
-      scaleClass: "h-8 sm:h-9 w-auto",
-    },
-    {
-      name: "LIC Housing Finance",
-      src: "/banks/lichfl.svg",
-      alt: "LIC Housing Finance Logo",
-      width: 175,
-      height: 46,
-      scaleClass: "h-9 sm:h-10 w-auto",
-    },
-  ];
-
   return (
-    <section className="py-16 bg-[#F8FAFC] border-b border-[#DCE8F0]">
+    <section className="py-14 bg-[#F8FAFC] border-b border-[#DCE8F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="font-heading text-xl sm:text-2xl font-extrabold text-[#0B3666] tracking-tight">
             Our Banking &amp; NBFC Partners
           </h2>
-          <p className="text-xs text-[#576F84] mt-1.5 font-medium">
+          <p className="text-xs text-[#576F84] mt-1 font-medium">
             We work with leading Banks and NBFCs to bring you the best financial solutions.
           </p>
         </div>
 
-        {/* Clean Logo Box Row with large, prominent, official SVG logos */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 sm:gap-5">
-          {bankLogos.map((bank, index) => (
-            <div
-              key={index}
-              className="bg-white px-5 py-3 rounded-xl border border-[#DCE8F0] shadow-2xs hover:shadow-md hover:border-[#008272]/50 transition-all flex items-center justify-center min-h-[60px] min-w-[140px] sm:min-w-[160px]"
-            >
-              <Image
-                src={bank.src}
-                alt={bank.alt}
-                width={bank.width}
-                height={bank.height}
-                className={`${bank.scaleClass} object-contain transition-transform hover:scale-105 duration-200`}
-                priority
-              />
+        {/* Clean Logo Box Row matching reference screenshot layout */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {/* SBI */}
+          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
+            <div className="w-5 h-5 rounded-full bg-[#0082c6] flex items-center justify-center text-white text-[10px] font-black">
+              ●
             </div>
-          ))}
-
-          {/* and more badge */}
-          <div className="flex items-center justify-center px-3 py-2 text-xs text-[#576F84] italic font-semibold">
-            and more...
+            <span className="font-extrabold text-sm text-[#002f6c] tracking-wider">SBI</span>
           </div>
+
+          {/* HDFC */}
+          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
+            <div className="w-4 h-4 bg-[#004c8f] border border-red-600 flex items-center justify-center text-[8px] text-white font-bold">
+              +
+            </div>
+            <span className="font-black text-sm text-[#004c8f] tracking-tight">HDFC BANK</span>
+          </div>
+
+          {/* ICICI */}
+          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
+            <span className="text-base text-[#f37e20] font-black">i</span>
+            <span className="font-extrabold text-sm text-[#a81c20] tracking-tight">ICICI Bank</span>
+          </div>
+
+          {/* AXIS */}
+          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
+            <span className="text-base font-black text-[#97144d]">▲</span>
+            <span className="font-extrabold text-sm text-[#97144d] tracking-wider">AXIS BANK</span>
+          </div>
+
+          {/* KOTAK */}
+          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-1.5 shadow-2xs hover:shadow-xs transition">
+            <div className="w-4 h-4 rounded-full bg-red-600 flex items-center justify-center text-[9px] text-white font-bold">
+              ∞
+            </div>
+            <span className="font-black text-sm text-[#003366] tracking-tight">kotak</span>
+          </div>
+
+          {/* BAJAJ FINSERV */}
+          <div className="bg-white px-5 py-3 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
+            <div className="w-4 h-4 rounded bg-[#0072bc] flex items-center justify-center text-[10px] text-white font-black">
+              B
+            </div>
+            <span className="font-extrabold text-xs text-[#0072bc] tracking-wider">BAJAJ FINSERV</span>
+          </div>
+
+          {/* LIC HFL */}
+          <div className="bg-white px-4 py-2.5 rounded-lg border border-[#DCE8F0] flex items-center gap-2 shadow-2xs hover:shadow-xs transition">
+            <div className="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center text-[9px] font-bold text-slate-900">
+              🪔
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="font-black text-xs text-[#005a9c] leading-none">LIC HFL</span>
+              <span className="text-[7px] font-semibold text-slate-500 leading-none mt-0.5">HOUSING FINANCE LTD</span>
+            </div>
+          </div>
+
+          {/* and more */}
+          <span className="text-xs text-[#576F84] italic px-2 font-medium">and more...</span>
         </div>
       </div>
     </section>
