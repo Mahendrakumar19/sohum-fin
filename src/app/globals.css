@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Exact Color Extraction from Reference Screenshot */
+    --sohum-navy: #0B3666;
+    --sohum-navy-deep: #052342;
+    --sohum-navy-subtle: #192b45;
+    --sohum-teal: #008272;
+    --sohum-teal-light: #E6F5F2;
+    --sohum-sky-bg: #E8F3FA;
+    --sohum-sky-surface: #F2F8FC;
+    --sohum-card-hover: #FFFFFF;
+    --sohum-border: #DCE8F0;
+    --sohum-text-muted: #576F84;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: var(--sohum-navy-subtle);
+    background-color: #ffffff;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom range styling */
+input[type="range"] {
+  accent-color: #008272;
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 50" width="210" height="50">
+  <!-- Official Axis Bank Maroon Peak Icon -->
+  <g transform="translate(6, 6)">
+    <!-- Tall left peak -->
+    <path d="M0 38L18 0l11 19-8 19H0z" fill="#97144d" />
+    <!-- Short right wing -->
+    <path d="M25 38l12-21 4 8-6 13h-10z" fill="#97144d" />
+  </g>
+  <!-- Official AXIS BANK Wordmark -->
+  <text x="56" y="32" fill="#97144d" font-size="22" font-weight="900" font-family="'Plus Jakarta Sans', Arial, sans-serif" letter-spacing="1">
+    AXIS BANK
+  </text>
+</svg>
