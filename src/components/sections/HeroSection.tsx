@@ -3,35 +3,33 @@ import Link from "next/link";
 import Image from "next/image";
 import { Graph, ShieldDone, TwoUsers, Heart, ArrowRight } from "@/components/ui/Iconly";
 
-
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden min-h-[580px] lg:min-h-[640px] flex items-center border-b border-[#DCE8F0]">
+    <section className="relative overflow-hidden min-h-[540px] lg:min-h-[580px] flex items-center border-b border-[#DCE8F0] bg-gradient-to-r from-[#EAF3FA] via-[#F1F7FC] to-[#EAF3FA]">
       {/* 
-        Full background image extension:
-        Hero coins & city skyline image spans the entire hero container, positioned right,
-        with a tailored gradient mask on the left so copy is razor-sharp legible.
+        Background Image container:
+        - Absolute right-anchored in the hero (from center to right: w-full md:w-[60%] lg:w-[50%])
+        - Max-width of 720px so the hand and coin stacks stay at an elegant, natural, medium size
+        - Smooth gradient fades seamlessly merge it into the background on the left and edges
       */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute right-0 top-0 bottom-0 w-full md:w-[60%] lg:w-[52%] max-w-[720px] z-0 select-none pointer-events-none overflow-hidden">
         <Image
           src="/hero-coins.jpg"
           alt="Financial solutions background"
           fill
           priority
-          className="object-cover object-right md:object-[78%_center] opacity-95"
+          sizes="(max-width: 768px) 100vw, 720px"
+          className="object-cover object-right md:object-[85%_center]"
         />
-        {/*
-          Gradient overlay mask:
-          Left side is #E8F3FA / #F2F8FC matching the branding and fading to transparent towards the right
-          so the hand, plant sprouts and coins emerge seamlessly into the background!
-        */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#E8F3FA] via-[#E8F3FA]/90 md:via-[#E8F3FA]/80 lg:via-[#E8F3FA]/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent" />
+        {/* Soft edge-feathering gradients to blend naturally into the hero background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#EAF3FA] via-[#EAF3FA]/80 md:via-[#EAF3FA]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#EAF3FA]/90 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#EAF3FA]/60 via-transparent to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left Column (7 cols): Content over seamlessly blended background */}
+          {/* Left Column (7 cols): Content over clear, uncluttered background */}
           <div className="lg:col-span-7 space-y-6 text-left">
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#0B3666] tracking-tight leading-[1.12]">
               Financial Solutions<br />
@@ -98,7 +96,7 @@ export default function HeroSection() {
 
           </div>
 
-          {/* Right Column (5 cols): Floating script card over the extended coin background */}
+          {/* Right Column (5 cols): Floating script card over the visual area */}
           <div className="lg:col-span-5 relative flex justify-end">
             <div className="bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl border border-[#DCE8F0] max-w-xs transform rotate-1 mt-6 lg:mt-0">
               <p className="font-serif italic text-base sm:text-lg font-extrabold text-[#0B3666] leading-snug text-right">
